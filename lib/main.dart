@@ -25,6 +25,8 @@ class MyAppState extends State<MyApp> {
     // Default variable set is 0
     currentLocation['latitude'] = 0.0;
     currentLocation['longitude'] = 0.0;
+    currentLocation['accuracy'] = 0.0;
+    currentLocation['altitude'] = 0.0;
 
     initPlatformState();
 
@@ -42,8 +44,7 @@ class MyAppState extends State<MyApp> {
         home: new Scaffold(
       appBar: AppBar(
           title: Text(
-            'LOCATION',
-
+            'GPS DATA',
           )),
           body: Center(
             child: Column(
@@ -52,7 +53,11 @@ class MyAppState extends State<MyApp> {
                 Text(
                   'Lat/Lng:${currentLocation['latitude']} / ${currentLocation['longitude']}',
                   style: TextStyle(fontSize: 20.0, color: Colors.blueAccent),
-                )
+                ),
+                Text(
+                  'accu/altitude:${currentLocation['accuracy']} / ${currentLocation['altitude']}',
+                  style: TextStyle(fontSize: 20.0, color: Colors.blueAccent),
+                ),
               ],
             ),
           )),
